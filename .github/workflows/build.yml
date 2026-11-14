@@ -30,12 +30,12 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew TMessagesProj:assembleDebug -x lint -x test
+        run: ./gradlew TMessagesProj_App:assembleAfatDebug -x lint -x test
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Telegram-APK
           path: |
-            TMessagesProj/build/outputs/apk/**/*.apk
-            TMessagesProj/build/outputs/apk/**/*.aab
+            TMessagesProj_App/build/outputs/apk/**/*.apk
+            TMessagesProj_App/build/outputs/apk/**/*.aab
